@@ -20,22 +20,30 @@ router.post("/api/count", async (ctx) => {
   const { request } = ctx;
   const { action } = request.body;
   if (action === "inc") {
-    await Counter.create();
+    await Counter.create().catch(e => {
+      console.log(e)
+    });;
   } else if (action === "clear") {
     await Counter.destroy({
       truncate: true,
+    }).catch(e => {
+      console.log(e)
     });
   }
 
   ctx.body = {
     code: 0,
-    data: await Counter.count(),
+    data: await Counter.count().catch(e => {
+      console.log(e)
+    }),
   };
 });
 
 // 获取计数
 router.get("/api/count", async (ctx) => {
-  const result = await Counter.count();
+  const result = await Counter.count().catch(e => {
+    console.log(e)
+  });;
 
   ctx.body = {
     code: 0,
@@ -59,7 +67,9 @@ app
 
 const port = process.env.PORT || 80;
 async function bootstrap() {
-  await initDB();
+  await initDB().catch(e => {
+    console.log(e)
+  });
   app.listen(port, () => {
     console.log("启动成功", port);
   });
