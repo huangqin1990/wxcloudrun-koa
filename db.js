@@ -28,4 +28,6 @@ async function init() {
 module.exports = {
   init,
   Counter,
+  MYSQL_USERNAME,
+  MYSQL_PASSWORD
 };

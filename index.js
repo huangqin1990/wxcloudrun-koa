@@ -4,7 +4,7 @@ const logger = require("koa-logger");
 const bodyParser = require("koa-bodyparser");
 const fs = require("fs");
 const path = require("path");
-const { init: initDB, Counter } = require("./db");
+const { init: initDB, Counter, MYSQL_USERNAME, MYSQL_PASSWORD } = require("./db");
 
 const router = new Router();
 
@@ -71,7 +71,7 @@ async function bootstrap() {
     console.log(e)
   });
   app.listen(port, () => {
-    console.log("启动成功", port);
+    console.log("启动成功", port, MYSQL_USERNAME, MYSQL_PASSWORD);
   });
 }
 bootstrap();
