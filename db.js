@@ -10,7 +10,7 @@ const sequelize = new Sequelize("nodejs_demo", MYSQL_USERNAME, MYSQL_PASSWORD, {
   port,
   dialect: "mysql" /* one of 'mysql' | 'mariadb' | 'postgres' | 'mssql' */,
 });
-
+console.log(host, port, '配置')
 // 定义数据模型
 const Counter = sequelize.define("Counter", {
   count: {
