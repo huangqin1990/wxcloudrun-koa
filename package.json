@@ -4,7 +4,7 @@
   "description": "微信云托管 koa 框架模板",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js --unhandled-rejections=strict"
   },
   "author": "",
   "license": "Apache-2.0",
