@@ -1,7 +1,7 @@
 const { Sequelize, DataTypes } = require("sequelize");
 
 // 从环境变量中读取数据库配置
-const { MYSQL_USERNAME = 'root_hq', MYSQL_PASSWORD = 'Xiaoguozi123', MYSQL_ADDRESS = "" } = process.env;
+const { MYSQL_USERNAME, MYSQL_PASSWORD, MYSQL_ADDRESS = "" } = process.env;
 
 const [host, port] = MYSQL_ADDRESS.split(":");
 
@@ -10,7 +10,6 @@ const sequelize = new Sequelize("nodejs_demo", MYSQL_USERNAME, MYSQL_PASSWORD, {
   port,
   dialect: "mysql" /* one of 'mysql' | 'mariadb' | 'postgres' | 'mssql' */,
 });
-console.log(host, port, '配置')
 // 定义数据模型
 const Counter = sequelize.define("Counter", {
   count: {
