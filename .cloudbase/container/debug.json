@@ -1,5 +1,11 @@
 {
-  "containers": [],
+  "containers": [
+    {
+      "name": "wxcloudrun-koa",
+      "domain": "",
+      "ip": ""
+    }
+  ],
   "config": {
     "wxcloudrun-koa": {
       "containerPort": 80,

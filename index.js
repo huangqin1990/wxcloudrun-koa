@@ -4,7 +4,7 @@ const logger = require("koa-logger");
 const bodyParser = require("koa-bodyparser");
 const fs = require("fs");
 const path = require("path");
-const { init: initDB, Counter, MYSQL_USERNAME, MYSQL_PASSWORD } = require("./db");
+const { init: initDB, Counter } = require("./db");
 const OpenAI = require('openai')
 
 const router = new Router();
@@ -62,8 +62,8 @@ router.get("/api/getInfo", async (ctx) => {
     openai = new OpenAI(
       {
         // 若没有配置环境变量，请用百炼API Key将下行替换为：apiKey: "sk-xxx",
-        apiKey: process.env.ALIBABA_AI_API_DASHSCOPE_API_KEY,
-        baseURL: process.env.ALIBABA_AI_SDK_BASE_URL
+        apiKey: 'sk-6f4bd001cba94fc28343ff6efc480699',
+        baseURL: 'https://dashscope.aliyuncs.com/compatible-mode/v1'
       }
     );
   }
@@ -105,7 +105,7 @@ async function bootstrap() {
     console.log(e)
   });
   app.listen(port, () => {
-    console.log("启动成功", port, MYSQL_USERNAME, MYSQL_PASSWORD);
+    console.log("启动成功", port);
   });
 }
 bootstrap();
