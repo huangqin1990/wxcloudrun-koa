@@ -10,6 +10,8 @@ RUN apk add ca-certificates
 # 安装依赖包，如需其他依赖包，请到alpine依赖包管理(https://pkgs.alpinelinux.org/packages?name=php8*imagick*&branch=v3.13)查找。
 RUN apk add --update --no-cache nodejs npm
 
+RUN sed -i 's/https/http/' /etc/apk/repositories
+
 # # 指定工作目录
 WORKDIR /app
 
