@@ -14,7 +14,7 @@ const processTicketInfo = async (taskId, image) => {
             messages: [{
                 role: "user", content: [
                     { type: "text", text: "只需要票的出行信息" },
-                    { type: "image_url", image_url: { "url": image || "https://7072-prod-9gctejvpcf0cb9ec-1305304192.tcb.qcloud.la/1381730112226_.pic.jpg?sign=3f62b3c00b9b3bb5a1d8e8ea9809160b&t=1730574397" } }
+                    { type: "image_url", image_url: { "url": "https://7072-prod-9gctejvpcf0cb9ec-1305304192.tcb.qcloud.la/1381730112226_.pic.jpg?sign=3f62b3c00b9b3bb5a1d8e8ea9809160b&t=1730574397" } }
                 ]
             }]
         });
