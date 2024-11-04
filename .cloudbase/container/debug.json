@@ -3,7 +3,8 @@
     {
       "name": "wxcloudrun-koa",
       "domain": "",
-      "ip": ""
+      "ip": "",
+      "containerId": "52c0e6c12f0d8f29112c2a62b7b3716584fd9e95f9f5562cfdddcea8fcd5c22c"
     }
   ],
   "config": {
